@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "auth-endpoint-pytest"
+version = "0.1.0"
+description = "Exercício: testes de autenticação (sucesso e erro) com pytest"
+authors = ["Henrique <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "auth_app", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+pydantic = "^2.6.0"
+email-validator = "^2.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+httpx = "^0.27.0"
+uvicorn = "^0.30.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
